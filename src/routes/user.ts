@@ -16,11 +16,19 @@ router.get("/", (req, res) => {
 });
 
 router.post("/api/v1/parse", (req, res) => {
-  res.status(200).send(UserParser.ParseV1(req.body.data));
+  const jsonResponse = {
+    statusCode: 200,
+    data: UserParser.ParseV1(req.body.data),
+  };
+  res.status(200).send(jsonResponse);
 });
 
 router.post("/api/v2/parse", (req, res) => {
-  res.status(200).send(UserParser.ParseV2(req.body.data));
+  const jsonResponse = {
+    statusCode: 200,
+    data: UserParser.ParseV2(req.body.data),
+  };
+  res.status(200).send(jsonResponse);
 });
 
 export default router;
