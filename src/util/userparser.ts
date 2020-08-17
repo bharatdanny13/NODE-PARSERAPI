@@ -5,9 +5,7 @@ interface IUser {
 }
 
 export default class UserParser {
-  public static ParseV1 = (d: string) => {
-    // const data = d || "JOHN0000MICHAEL0009994567";
-    const data = d;
+  public static ParseV1 = (data: string): IUser => {
     let found0Flag = false;
     const found0EndFlag = false;
     let temp = [];
@@ -36,13 +34,10 @@ export default class UserParser {
     };
   };
 
-  public static ParseV2 = (d: string) => {
-    const data = d || "JOHN0000MICHAEL0009994567";
-    // const data = d;
+  public static ParseV2 = (data: string): IUser => {
     let found0Flag = false;
     let temp = [];
     const finalArr = [];
-    // const count = data.split("").length;
     for (let c = 0; c < data.length; c++) {
       if (!found0Flag) {
         if (data[c] !== "0") {
