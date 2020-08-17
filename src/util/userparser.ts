@@ -30,7 +30,7 @@ export default class UserParser {
     return {
       firstName: finalArr[0],
       lastName: finalArr[1],
-      clientId: finalArr[2].slice(0, 3) + "-" + finalArr[2].slice(3),
+      clientId: finalArr[2],
     };
   };
 
@@ -57,7 +57,7 @@ export default class UserParser {
     return {
       firstName: finalArr[0],
       lastName: finalArr[1],
-      clientId: finalArr[2],
+      clientId: finalArr[2].slice(0, 3) + "-" + finalArr[2].slice(3),
     };
   };
 }
